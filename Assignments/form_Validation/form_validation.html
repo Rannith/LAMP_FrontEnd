@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event Registration Form</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="form_validation.css">
+    </head>
+    <body>
+        <div class="container">
+           <h1>EVENT REGISTRATION FORM</h1>
+           <form class="form-group" action="file:///D:/HTML%20Projects/HTML%20samples/DOM%20samples%20javaScript/form_Validation/julius-caesar/julius_caesar_story.html">
+           <div class="row">
+               <label class="col-4">Name</label>
+               <input type="text" class="form-control" id="firstName" placeholder="First Name" required>
+               <div class="invalid-sentence" id="firstNameError">
+                   
+               </div>
+               <input type="text" class="form-control" id="lastName" placeholder="Last Name" required>
+               <div class="invalid-sentence" id="lastNameError">
+                   
+               </div>
+           </div>
+           <div class="row">
+               <label class="col-4">Company</label>
+               <input type="text" class="form-control" id="companyName" placeholder="Enter your company name" required>
+               <div class="invalid-sentence" id="companyError">
+                   
+               </div>
+           </div>
+           <div class="row">
+               <label class="col-4">Email</label>
+               <input type="text" class="form-control" id="email" placeholder="Enter your Email">
+               <div class="invalid-sentence" id="emailError">
+                   
+               </div>
+            </div>
+            <div class="row">
+               <label class="col-4">Phone</label>
+               <input type="text" class="form-control" id="phone" placeholder="Enter your mobile number">
+                <div class="invalid-sentence" id="phoneError">
+                   
+               </div>
+            </div>
+            <div class="row">
+                <label class="col-4">Department</label>
+                <select class="form-control" id="department">
+                    <option value="Option 1">BFS</option>
+                    <option value="Option 2">EBA</option>
+                    <option value="Option 3">DOTNET</option>
+                </select>
+            </div>
+            <div class="row-gender">
+                <label class="col-4">Gender</label>
+                <input type="radio" id="male" value="male" name="gender">
+                <label for="male">Male</label>
+                <input type="radio" id="female" value="female" name="gender">
+                <label for="female">Female</label>
+            </div>
+               <div class="row-gender">
+                <input type="checkbox" id="checkBox">   
+                <label class="col-4">I agree above mentioned deatils are true</label>
+                <div class="invalid-sentence" id="checkBoxError">
+                   
+               </div>
+            </div>
+            <div class="row">
+                 <input class="button-primary" id="submit" type="submit" value="Submit" src="www.google.com">
+            </div>
+           </form>
+        </div>
+        <script src="form_validation.js"></script>
+    </body>
+</html>
