@@ -1,0 +1,1 @@
+This simple Exercise for Iterator and Generator.

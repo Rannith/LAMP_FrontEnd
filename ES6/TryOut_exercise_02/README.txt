@@ -1,0 +1,1 @@
+This is simple Exercise for class and object in ES6.
