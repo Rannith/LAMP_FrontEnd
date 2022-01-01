@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            text-align: center;
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+        input[type=text]{
+            text-align: center;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            
+            box-sizing: border-box;
+        }
+        input[type = submit]{
+            width: 20%;
+            display: inline-block;
+            margin: 8px 0px;
+            background-color: green;
+            color: white;
+            font-size: medium;
+        }
+        table, th, td {
+            border-collapse: collapse;
+            padding: 15px;
+            border-bottom: 1px solid gray;
+            text-align: center;
+            width: 75%;
+        }
+        table.table-book{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .success{
+            color: white;
+            padding: 5px;
+            margin: 5px 0 15px 0;
+            background-color: green;
+        }
+        .error{
+            color: white;
+            padding: 5px;
+            margin: 5px 0 15px 0;
+            background-color: red;
+        }
+    </style>
+    <title>Book List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Book</h1>
+        <form id="book-form">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" id="title" class="form-input">
+              </div>
+              <div>
+                <label for="author">Author</label>
+                <input type="text" id="author" class="form-input">
+              </div>
+              <div>
+                <label for="isbn">ISBN</label>
+                <input type="text" id="isbn" class="form-input">
+              </div>
+              <div>
+                <input type="submit" value="Submit" class="form-input">
+              </div>
+        </form>
+        <table class="table-book">
+            <thead>
+                <tr>
+                    <th class="table-title">Title</th>
+                    <th class="table-title">Author</th>
+                    <th class="table-title">ISBN</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="book-list"></tbody>
+        </table>
+    </div>
+    <script src="BookList.js"></script>
+</body>
+</html>
