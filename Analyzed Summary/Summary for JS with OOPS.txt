@@ -1,0 +1,24 @@
+Validation in JavaScript Using OOPS
+----------------------------------------------------------------------
+
+1.First of all create a HTML page contain input field that is First Name, Second Name, Email, Company Name and Phone number.And finally one Submit button.And also create a div tag and keep empty for error message below each of that input field.
+
+2.And then Create a .js file that connected to the HTML file created previously.
+
+3.Next step was create a seperate variable for input field whatever we had using DOM elements.
+
+4.And then create a class for employee that contain input field variables and also create a constructor which is responsible for basic data whatever we include it.
+
+5.Instatiate the employee class and pass a input variable as a argument for constructor.
+
+6.Create a class for validator and include method for validation.
+
+7.validation for Name was using regex and restrict a condition as alphabet only, validation for email using same regex and restrict a specific condition for that, Validate phone number using regex and restrict a condition as 10 numbers only start with either 6 or 7 or 8 or 9.
+
+8.Instantiate the validator class and call the specific method for validate that previous input field when we fill out and move to the next input field using blur event.
+
+9.In that method return the error message when given input was not statisfy given specific regex condition.
+
+10.That given error message was appand to the div tag that appear below that specific each input field.
+
+-----Time required to completed the page was approximatly 4 hours------
