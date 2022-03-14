@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Storage API</title>
+</head>
+<body>
+    <h1>Web Storage API Sample(Session Storage)</h1>
+    <input id="name" value="" type="text" placeholder="Enter your name">
+    <button onclick="getName()" type="button">Get Name</button>
+    <button onclick="sesStorage()" type="button">Session Stored Name</button>
+    <div id="container" style="padding: 10px; font-size: large; font-weight: bold; font-family: sans-serif;"></div>
+    <script>
+        function getName(){
+            const name = document.getElementById('name').value;
+            // console.log(name);
+            sessionStorage.setItem("Name",name);
+            document.getElementById('container').innerText ="Session Storage : " + sessionStorage.getItem("Name");
+        }
+
+        function sesStorage(){
+            document.getElementById('container').innerText ="Session Storage : " + sessionStorage.getItem("Name");
+        }
+    </script>
+</body>
+</html>
