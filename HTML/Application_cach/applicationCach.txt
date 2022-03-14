@@ -1,0 +1,8 @@
+﻿Application Cach
+This is mean web application was cached, by using application cach we can load this page even we are at offline. 
+Application:
+offline Browsing : we can brows web even in offline.
+speed: data is already store so it is easy to access data with grater speed.
+reduce server load: browser only load and update from the browser.
+
+
