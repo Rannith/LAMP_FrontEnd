@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animation</title>
+    <style>
+        .sphere{
+            display: block;
+            background: black;
+            border-radius: 100%;
+            /* background: radial-gradient(circle at 100px 100px, #5cabff, #000); */
+            height: 150px;
+            width: 150px;
+            margin: 0;
+            background: radial-gradient(circle at 100px 100px, #5cabff , #000);
+            animation-name: crossOver;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes crossOver {
+            from {
+                margin-left: 100%;
+                margin-top: 100%;
+            }
+
+            73% {
+                height: 400px;
+                width: 400px;
+                margin-left: 25%;
+            }
+
+            to {
+                margin-left: 0%;
+                margin-bottom: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Animation Sample</h2>
+    <figure class="sphere"></figure>
+</body>
+</html>
