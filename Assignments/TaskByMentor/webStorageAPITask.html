@@ -5,9 +5,9 @@
 </head>
 <body>
     <h1>Web Storage API Task</h1>
-    <input id="name" value="" type="text" placeholder="Enter your name">
-    <button onclick="storeNames()" type="button">Store Locally</button>
-    <button onclick="locStorage()" type="button">Get Locally Stored data</button>
+    <input id="name" type="text" placeholder="Enter your name">
+    <button onclick="storeNames()" >Store Locally</button>
+    <button onclick="locStorage()" >Get Locally Stored data</button>
     <div id="container" style="padding: 10px; font-size: large; font-weight: bold; font-family: sans-serif;"></div>
     <script>
         var arrayOfNames = [];
@@ -15,7 +15,7 @@
             const name = document.getElementById('name').value;
             arrayOfNames.push(name);
             localStorage.setItem("Name",JSON.stringify(arrayOfNames));
-            document.getElementById('container').innerText ="Locally Stored Item" + localStorage.getItem("Name",JSON.stringify(arrayOfNames));
+            document.getElementById('container').innerText ="Locally Stored Item" + localStorage.getItem("Name");
         }
 
         function locStorage(){
