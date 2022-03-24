@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+        <h1>User Form</h1>
+        <form>
+            <div class="row">
+                <label class="column">Name</label>
+                <input type="text" class="form-control" onblur="validateName()" id="name" placeholder="Name" required>
+                <div class="invalid-sentence" id="nameError">
+            </div>
+            <div class="row">
+                <label class="column">Company</label>
+                <input type="text" class="form-control" onblur="validateCompany()" id="companyName" placeholder="Enter your company name" required>
+                <div class="invalid-sentence" id="companyError">
+                    
+                </div>
+            </div>
+            <div class="row">
+                <label class="column">Email</label>
+                <input type="email" class="input-field" onblur="validateEmail()" id="email" placeholder="Enter your Email">
+                <div class="invalid-sentence" id="emailError">
+                    
+                </div>
+             </div>
+             <div class="row">
+                <label class="column">Password</label>
+                <input type="password" class="input-field" onblur="validatePassword()" id="password">
+                 <div class="invalid-sentence" id="passwordError"> </div>
+             </div>
+             <div class="row-spacing">
+                <input type="checkbox" class="form-control" id="showPassword">
+                <label class="column">Show Password</label>
+             </div>
+             <div class="row">
+                <label class="column">Phone</label>
+                <input type="tel" class="input-field" onblur="validatePhone()" id="phone" placeholder="Enter your mobile number">
+                 <div class="invalid-sentence" id="phoneError">
+                    
+            </div>
+            <div class="row">
+                <label class="column">Date of Birth</label>
+                <input type="date" class="input-field" onblur="validateDate()" id="birthDate" min="1965-01-01" max="2002-12-31">
+                 <div class="invalid-sentence" id="dateError"> </div>
+             </div>
+             <div class="row">
+                <label class="column">Age</label>
+                <input type="number" class="input-field" onblur="validateAge()" id="age" min="20" max="60" step="1" placeholder="Enter your age">
+                 <div class="invalid-sentence" id="ageError"> </div>
+             </div>
+             <div class="row">
+                <label class="column">Rate Yourself</label>
+                <input type="range" class="input-field" id="rangeYourSelf" min="0" max="100">
+                 <div class="invalid-sentence" id="rangeError"> </div>
+             </div>
+             <div class="row">
+                <label class="column">Git URL</label>
+                <input type="url" class="input-field" onblur="validateUrl()" id="myUrl">
+                 <div class="invalid-sentence" id="urlError"> </div>
+             </div>
+             <div class="row">
+                 <label class="column">Department</label>
+                 <select class="form-control" id="department">
+                     <option value="Option 1">LAMP</option>
+                     <option value="Option 2">EBA-DOTNET</option>
+                     <option value="Option 3">DOTNET</option>
+                     <option value="Option 3">ORACLE</option>
+                 </select>
+             </div>
+             <div class="row-spacing">
+                 <label class="column">Gender</label>
+                 <input type="radio" id="male" value="male" name="gender">
+                 <label for="male">Male</label>
+                 <input type="radio" id="female" value="female" name="gender">
+                 <label for="female">Female</label>
+            </div>
+            <div class="row">
+                <label class="column">Resume</label>
+                <input type="file" class="box" onchange="validateFile()" id="myFile">
+                 <div class="invalid-sentence" id="fileError"> </div>
+             </div>
+             <div class="row">
+                <label class="column">Choose your Favourite Colour</label>
+                <input type="color" class="box" id="myColor">
+                 <div class="invalid-sentence" id="dateError"> </div>
+             </div>
+            <div class="row">
+                 <input type="checkbox" id="checkBox" onsubmit="validateCheckBox()">   
+                 <label class="column">I agree above mentioned deatils are true</label>
+                 <div class="invalid-sentence" id="checkBoxError">
+                    
+                </div>
+             </div>
+             <div class="row">
+                  <!-- <input class="button-primary" id="submit" type="submit" value="Submit"> -->
+                  <button class="button-primary" type="submit" >Submit</button>
+             </div>
+            </form>
+    </div>
+</body>
+<script src="form.js"></script>
+</html>
