@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task Two</title>
+</head>
+<body>
+    <h1>Repositioning Paragraph</h1>
+    <p>Content One</p>
+    <p>Content Two</p>
+    <p>Content Three</p>
+    <button onclick="rePositioning()">Click to Repositioning</button>
+    <script>
+       function rePositioning(){
+           let content = document.getElementsByTagName('p');
+           document.body.insertBefore(content[0],content[2]);
+       }
+    </script>
+</body>
+</html>
