@@ -15,7 +15,7 @@ body {
 fieldset {
     text-align: center;
     width: auto;
-    height: 600px;
+    height: 700px;
     margin: 5%;
     padding: 0;
     border: 3px solid aliceblue;
@@ -25,7 +25,8 @@ fieldset {
 legend{
     text-align: center;
     /* color: rgb(54, 0, 81); */
-    color: #6b6a6a;
+    /* color: #6b6a6a; */
+    color: black;
     font-size: 30px;
     font-family: 'Arial',sans-serif;
     font-weight: bold;

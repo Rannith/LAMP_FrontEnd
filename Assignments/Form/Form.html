@@ -5,15 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee registration</title>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'> -->
     <link rel="Stylesheet" href="Style.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <form data-multi-step class="form-container">
+    <form class="form-container">
         <fieldset>
             <legend>Employee Registration Form</legend>
-            <div data-step="1" class="container">
+            <div data-step="1" class="container active">
                 <h3 class="step-title">Basic Information</h3>
                 <div class="input-field">
                     <label for="email">Email*</label>
@@ -40,22 +39,22 @@
                     <input type="text" id="last-name" class="input-box" placeholder="Last Name">
                 </div>
                 <div class="input-field">
-                    <button data-next class="input-box">Next</button>
+                    <a data-next class="input-box" onclick="validateBasicForm()">Next</a>
                 </div>
             </div>
             <div data-step="2" class="container">
                 <h3 class="step-title">Other Information</h3>
                 <div class="input-field">
                     <label for="date-birth">DOB*</label>
-                    <input type="text" id="date-birth" class="input-box" name="dob" placeholder="date of birth (dd/mm/yyyy)">
+                    <input type="text" id="date-birth" class="input-box" name="dob" placeholder="date of birth (yyyy/mm/dd)">
                     <div class="invalid-sentence" id="dobError"></div>
                 </div>
                 <div class="input-radio">
-                    <label for="gender">Gender</label>
-                    <input type="radio" id="gender" name="gender" checked>
-                    <label for="male">Male</label>
-                    <input type="radio" id="gender" name="gender">
-                    <label for="female">Female</label>
+                    <label>Gender</label>
+                    <input type="radio" class="input-box" id="male" name="gender">male
+                    <input type="radio" class="input-box" id="female" name="gender">female
+                    <input type="radio" class="input-box" id="other" name="gender">others
+                    <div class="invalid-sentence" id="genderError"></div>
                 </div>
                 <div class="input-field">
                     <label for="address">Address</label>
@@ -63,8 +62,8 @@
                 </div>
                 <div class="input-field">
                     <label for="country-state">State</label>
-                    <select id="country-state" class="input-box">
-                        <option value="Selection">Select Your State</option>
+                    <select id="country-state" class="input-box" name="drop-down">
+                        <option value="Select Your State">Select Your State</option>
                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -103,67 +102,79 @@
                         <option value="Uttarakhand">Uttarakhand</option>
                         <option value="West Bengal">West Bengal</option>
                     </select>
+                    <div class="invalid-sentence" id="selectError"></div>
                 </div>
                 <div class="input-field">
                     <label for="mobile-number">Phone Number*</label>
-                    <input type="tel" id="mobile-number" class="input-box" placeholder="Mobile Number">
+                    <input type="tel" id="mobile-number" class="input-box" name="phone" placeholder="Mobile Number">
+                    <div class="invalid-sentence" id="phoneError"></div>
                 </div>
                 <div class="input-field">
-                    <button  data-previous id="previous-button" class="input-box">Previous</button>
-                    <button  data-next id="next-button" class="input-box">Next</button>
+                    <a  data-previous id="previous-button" class="input-box btn-previous">Previous</a>
+                    <a  data-next id="next-button" class="input-box" onclick="validateOtherForm()" >Next</a>
                 </div>
             </div>
             <div data-step="3" class="container">
                 <h3 class="step-title">Work Information</h3>
                 <div class="input-field">
+                    <label for="occupation">Occupation</label>
                     <input type="text" id="occupation" class="input-box" placeholder="Enter Your Occupation">
                 </div>
                 <div class="input-field">
+                    <label for="experiance">Experiance</label>
                     <input type="number" id="experiance" class="input-box" placeholder="Overall Experiance">
                 </div>
                 <div class="input-field">
-                    <button  data-previous id="previous-button" class="input-box">Previous</button>
-                    <button  data-next id="next-button" class="input-box">Next</button>
+                    <a  data-previous id="previous-button btn-previous" class="input-box">Previous</a>
+                    <a  data-next id="next-button" class="input-box" onclick="validateWorkInformation()">Next</a>
                 </div>
             </div>
             <div data-step="4" class="container">
                 <h3 class="step-title">Education Information</h3>
                 <div class="input-field">
-                    <select class="input-box" multiple>
-                        <option value='sslc'>SSLC</option>
-                        <option value='hsc'>HSC</option>
-                        <option value='polytechnic'>Polytechnic</option>
-                        <option value='bsc'>BSC</option>
-                        <option value='be'>BE</option>
+                    <label for="eduacation-select">Education</label>
+                    <select class="input-box" id="education-select" name="eduction-drop-down">
+                        <option value='Select Education'>Select Education</option>
+                        <option value='BE'>BE</option>
+                        <option value='BSC'>BSC</option>
+                        <option value='polytechnic'>polytechnic</option>
+                        <option value='ME'>ME</option>
+                        <option value='MSC'>MSC</option>
                     </select>
+                    <div class="invalid-sentence" id="educationError"></div>
                 </div>
                 <div class="input-field">
-                    <input type="text" id="year-passing" class="input-box" placeholder="Year of Passing (mm/YYYY)">
+                    <label for="year-passing">Year Of Passing</label>
+                    <input type="text" id="year-passing" class="input-box" name="passing-year" placeholder="Year of Passing (mm/YYYY)">
+                    <div class="invalid-sentence" id="yearOfPassingError"></div>
                 </div>
                 <div class="input-field">
-                    <button  data-previous id="previous-button" class="input-box">Previous</button>
-                    <button  data-next id="next-button" class="input-box">Next</button>
+                    <a  data-previous id="previous-button btn-previous" class="input-box">Previous</a>
+                    <a  data-next id="next-button" class="input-box" onclick="validateEducationInformation()">Next</a>
                 </div>
             </div>
             <div data-step="5" class="container">
                 <h3 class="step-title">Team Information</h3>
                 <div class="input-field">
-                    <select id="department" class="input-box">
-                        <option value="selection">Select Your Depatment</option>
+                    <label for="department">Department</label>
+                    <select id="department" class="input-box" name="department-drop-down">
+                        <option value="Select Your Depatment">Select Your Depatment</option>
                         <option value="Lamp">LAMP Practice</option>
                         <option value="Dotnet">DOTNET Practice</option>
                         <option value="Eba">EBA Practice</option>
                         <option value="Oracle">Oracle Fusion</option>
                         <option value="Bfs">BFS Java</option>
                     </select>
+                    <div class="invalid-sentence" id="departmentError"></div>
                 </div>
                 <div class="input-radio">
                     <input type="checkbox" id="check-box" class="input-box">
                     <label for="check-box">I agree above mentioned deatils are true</label>
+                    <div class="invalid-sentence" id="checkBoxError"></div>
                 </div>
                 <div class="input-field">
-                    <button  data-previous id="previous-button" class="input-box">Previous</button>
-                    <button  data-next id="next-button" class="input-box">Next</button>
+                    <a  data-previous id="previous-button btn-previous" class="input-box">Previous</a>
+                    <a  data-next id="next-button" class="input-box" onclick="validationTeamInformation()">Next</a>
                 </div>
             </div>
             <div data-step="6" class="container">
@@ -171,12 +182,11 @@
                     <h1>Thank You for Registering the Employee Registration Form</h1>
                 </div>
                 <div class="input-field">
-                    <button data-previous id="previous-button" class="input-box">Previous</button>
+                    <a data-previous id="previous-button btn-previous" class="input-box">Previous</a>
                     <button type="submit" id="next-button" class="input-box">Submit</button>
                 </div>
             </div>
         </fieldset>
     </form>
 </body>
-<script src="Script.js"></script>
 </html>
